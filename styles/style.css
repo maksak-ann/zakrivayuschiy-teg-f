@@ -24,8 +24,8 @@
     min-block-size: 100dvb;
     font-family: var(--main-font);
     background-image: repeating-linear-gradient(to right, var(--from-left-color), transparent 2px),
-        repeating-linear-gradient(to bottom, var(--from-left-color), transparent 2px),
-        linear-gradient(to bottom, var(--from-top-color), var(--to-bottom-color));;
+    repeating-linear-gradient(to bottom, var(--from-left-color), transparent 2px),
+    linear-gradient(to bottom, var(--from-top-color), var(--to-bottom-color));;
     background-size: cover;
 }
 
@@ -362,12 +362,15 @@
     .header {
         gap: 29px;
     }
+
     .header__title {
         margin-top: 144px;
     }
+
     .header__subtitle {
         margin-top: 33px;
     }
+
     .theme-menu__button:after {
         margin-right: 8px;
     }
