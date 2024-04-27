@@ -3,6 +3,17 @@
     --text-color: #000;
     --bg-color: #fff;
 
+    --like-button-color: #fff;
+    --heart-color: #FF0000;
+    --heart-contour-color: #000;
+    --text-shadow-color: #fff;
+
+    --from-left-color: #d3d3d3;
+    --from-top-color: #e7e7e7;
+    --to-bottom-color: #1a1a1a;
+
     --main-font: 'Inter', sans-serif;
     --secondary-font: 'PressStart2P', sans-serif;
+
+    --transition-duration: .3s;
 }

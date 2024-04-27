@@ -4,3 +4,69 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root.theme-light {
+    /* Переменные светлой темы */
+    --text-color: #000;
+    --bg-color: #fff;
+
+    --like-button-color: #fff;
+    --heart-color: #FF0000;
+    --heart-contour-color: #000;
+    --text-shadow-color: #fff;
+
+    --from-left-color: #d3d3d3;
+    --from-top-color: #e7e7e7;
+    --to-bottom-color: #1a1a1a;
+}
+
+:root.theme-dark {
+    /* Переменные темной темы */
+    --text-color: #00CC14;
+    --bg-color: #000;
+
+    --like-button-color: #00CC14;
+    --heart-color: #FF0000;
+    --heart-contour-color: #00CC14;
+    --text-shadow-color: #000;
+
+    --from-left-color: #000;
+    --from-top-color: #007f0c;
+    --to-bottom-color: #004306;
+}
+
+/* Остальные стили */
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Дублируем переменные светлой темы */
+        --text-color: #000;
+        --bg-color: #fff;
+
+        --like-button-color: #fff;
+        --heart-color: #FF0000;
+        --heart-contour-color: #000;
+        --text-shadow-color: #fff;
+
+        --from-left-color: #d3d3d3;
+        --from-top-color: #007f0c;
+        --to-bottom-color: #004306;
+    }
+}
+
+/* Остальные стили */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Переменные темной темы */
+        --text-color: #00CC14;
+        --bg-color: #000;
+
+        --like-button-color: #00CC14;
+        --heart-color: #FF0000;
+        --heart-contour-color: #00CC14;
+        --text-shadow-color: #000;
+
+        --from-left-color: #000;
+        --from-top-color: #007f0c;
+        --to-bottom-color: #004306;
+    }
+}
