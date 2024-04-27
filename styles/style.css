@@ -17,4 +17,150 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font);
+}
+
+.content-block {
+  border: 2px solid var(--text-color);
+  background: var(--bg-color);
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 25px;
+  font-family: var(--secondary-font);
+}
+
+.header__title {
+  margin-top: 120px;
+  text-align: center;
+  font-size: 49px;
+  font-weight: 400;
+  line-height: 49px;
+}
+
+.header__subtitle {
+  display: block;
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding-left: 20px;
+}
+
+.theme-menu__button {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity .3s ease;
+  position: relative;
+}
+.theme-menu__button:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 3px;
+  height: 2px;
+  width: 100%;
+  background-color: var(--text-color);
+  transition: scale .3s ease;
+  scale: 0;
+  transform-origin: left center;
+}
+.theme-menu__button:focus-visible {
+  opacity: .6;
+}
+.theme-menu__button:focus-visible:before {
+scale: 1;
+}
+
+.theme-menu__button:after {
+  content: '▶';
+  position: absolute;
+  right: 100%;
+  margin-right: 4px;
+  opacity: 0;
+}
+.theme-menu__button:disabled:after {
+  opacity: 1;
+}
+.theme-menu__button:hover {
+  opacity: .6;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+}
+
+.card__header {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.78px;
+}
+
+.card__pic {
+  position: relative;
+}
+
+.watermark {
+  position: absolute;
+  top: 25px;
+  right: 11px;
+}
+
+.card__content {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.card__like-button {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: none;
+  outline: none;
+  align-self: flex-end;
+}
+
+.button__text {
+  padding: 0 35px;
+  height: 38px;
+  border: 2px solid var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--secondary-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 12.6px;
 }
