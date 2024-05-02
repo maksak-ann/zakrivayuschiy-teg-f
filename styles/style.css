@@ -27,6 +27,7 @@
     repeating-linear-gradient(to bottom, var(--from-left-color), transparent 2px),
     linear-gradient(to bottom, var(--from-top-color), var(--to-bottom-color));;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .content-block {
@@ -45,7 +46,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
     padding-bottom: 25px;
     font-family: var(--secondary-font);
 }
@@ -62,10 +63,13 @@
 .header__subtitle {
     display: block;
     text-transform: uppercase;
-    margin-top: 20px;
     font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
     font-weight: 400;
     line-height: 14px;
+}
+
+.header__theme-menu {
+    margin-top: 4px;
 }
 
 .theme-menu__list {
@@ -111,8 +115,7 @@
 .theme-menu__button:after {
     content: '▶';
     position: absolute;
-    right: 100%;
-    margin-right: 4px;
+    right: calc(100% + 4px);
     opacity: 0;
     animation: 1s ease-in-out infinite move;
 }
@@ -135,13 +138,19 @@
 .card__header {
     padding: 5px 10px;
     font-size: 18px;
-    font-weight: 700;
-    line-height: 21.78px;
+    font-variation-settings: 'wght' 700;
+    line-height: 21px;
     color: var(--text-color);
 }
 
 .card__pic {
     position: relative;
+    border-top: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+}
+.card__pic img{
+    height: 100%;
+    width: 100%;
 }
 
 .watermark {
@@ -163,9 +172,15 @@
     }
 }
 
+@supports (-webkit-text-stroke: 1px  var(--text-shadow-color)) {
+    .watermark {
+        -webkit-text-stroke: 1px  var(--text-shadow-color);
+    }
+}
+
 .card__content {
     font-size: 18px;
-    font-weight: 400;
+    font-variation-settings: 'wght' 400;
     line-height: 21px;
     color: var(--text-color);
 }
@@ -238,15 +253,9 @@
     color: var(--like-button-color);
 }
 
-/*.button__text-inner {*/
-/*  position: relative;*/
-/*  z-index: 2;*/
-/*}*/
-
 .core {
     fill: transparent;
     transition: fill .3s ease .03s;
-
 }
 
 .main-body {
@@ -278,13 +287,13 @@
 .like-icon:active .main-body,
 .like-icon:active .core {
     fill: var(--heart-color);
-    transition: fill .3s ease .05s;
+    transition: fill .3s ease;
 }
 
 .like-icon.is-liked .core,
 .like-icon.is-liked .main-body {
     fill: var(--heart-color);
-    transition: fill .3s ease .05s;
+    transition: fill .3s ease;
 }
 
 .like-icon.is-liked .contour {
@@ -295,10 +304,12 @@
 .like-icon.is-liked .heart {
     animation: zoom-in-out .3s .1s;
     transform-origin: center center;
+    animation-direction: alternate;
 }
 
 .like-icon.is-liked .sparks {
     animation: transition-in-out .3s .2s ease-in;
+    animation-direction: alternate;
 }
 
 .footer {
@@ -351,6 +362,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
+    text-transform: uppercase;
 }
 
 .dialog__button {
@@ -359,9 +371,32 @@
     height: 38px;
 }
 
+.filter_sepia {
+    filter: sepia(60%);
+}
+.filter_hue {
+    filter: hue-rotate(90deg);
+}
+.filter_invert {
+    filter: invert(75%);
+}
+.filter_saturate {
+    filter: saturate(10%);
+}
+.filter_blur {
+    filter: blur(10px);
+}
+.filter_contrast {
+    filter: contrast(200%);
+}
+.filter_grayscale {
+    filter: grayscale(50%);
+}
+
+
 @media (width > 375px) {
     .header {
-        gap: 29px;
+        gap: 0;
     }
 
     .header__title {
@@ -372,7 +407,21 @@
         margin-top: 33px;
     }
 
+    .header__theme-menu {
+        margin-top: 29px;
+    }
+
     .theme-menu__button:after {
         margin-right: 8px;
+    }
+    .watermark {
+        top: 25px;
+        right: 25px;
+    }
+    .save__button {
+        flex-direction: row;
+    }
+    .floppy_for-button {
+        width: 21px;
     }
 }

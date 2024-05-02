@@ -13,7 +13,7 @@
     --to-bottom-color: #1a1a1a;
 
     --main-font: 'Inter', sans-serif;
-    --secondary-font: 'PressStart2P', sans-serif;
+    --secondary-font: 'PressStart2P', fantasy;
 
     --transition-duration: .3s;
 }
