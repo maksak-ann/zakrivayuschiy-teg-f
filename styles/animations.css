@@ -96,10 +96,14 @@
     transition: fill .3s linear;
 }
 
-.like-icon.is-liked .core,
-.like-icon.is-liked .main-body {
+.like-icon.is-liked .core {
     fill: var(--heart-color);
     transition: fill .3s linear;
+}
+
+.like-icon.is-liked .main-body {
+    fill: var(--heart-color);
+    transition: fill .3s linear .05s;
 }
 
 .like-icon.is-liked .contour {
