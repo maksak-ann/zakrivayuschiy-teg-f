@@ -15,5 +15,8 @@
     --main-font: 'Inter', sans-serif;
     --secondary-font: 'PressStart2P', fantasy;
 
+    --card-header-variation-font: 'wght' 700;
+    --card-body-variation-font: 'wght' 400;
+
     --transition-duration: .3s;
 }

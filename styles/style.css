@@ -23,9 +23,9 @@
     min-inline-size: 320px;
     min-block-size: 100dvb;
     font-family: var(--main-font);
-    background-image: repeating-linear-gradient(to right, var(--from-left-color), transparent 2px),
-    repeating-linear-gradient(to bottom, var(--from-left-color), transparent 2px),
-    linear-gradient(to bottom, var(--from-top-color), var(--to-bottom-color));;
+    background-image: repeating-linear-gradient(to right, var(--from-left-color), var(--from-left-color) 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(to bottom, var(--from-left-color), var(--from-left-color) 2px, transparent 2px, transparent 4px),
+    linear-gradient(to bottom, var(--from-top-color), var(--to-bottom-color));
     background-size: cover;
     background-attachment: fixed;
 }
@@ -66,6 +66,7 @@
     font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
     font-weight: 400;
     line-height: 14px;
+    color: var(--text-color);
 }
 
 .header__theme-menu {
@@ -138,7 +139,7 @@
 .card__header {
     padding: 5px 10px;
     font-size: 18px;
-    font-variation-settings: 'wght' 700;
+    font-variation-settings: var(--card-header-variation-font);
     line-height: 21px;
     color: var(--text-color);
 }
@@ -175,12 +176,13 @@
 @supports (-webkit-text-stroke: 1px  var(--text-shadow-color)) {
     .watermark {
         -webkit-text-stroke: 1px  var(--text-shadow-color);
+        text-shadow: none;
     }
 }
 
 .card__content {
     font-size: 18px;
-    font-variation-settings: 'wght' 400;
+    font-variation-settings: var(--card-body-variation-font);
     line-height: 21px;
     color: var(--text-color);
 }
@@ -231,7 +233,7 @@
     width: 100%;
     height: 100%;
     background: var(--text-color);
-    transition: transform var(--transition-duration);
+    transition: transform .5s ease-in-out;
     transform: scaleX(0);
     transform-origin: left center;
 }
@@ -249,67 +251,8 @@
     position: relative;
     z-index: 2;
     mix-blend-mode: difference;
-    transition: all .3s ease-in-out;
+    transition: all .3s linear;
     color: var(--like-button-color);
-}
-
-.core {
-    fill: transparent;
-    transition: fill .3s ease .03s;
-}
-
-.main-body {
-    fill: transparent;
-    transition: fill 0.3s ease;
-}
-
-.sparks {
-    fill: var(--heart-contour-color);
-    opacity: 0;
-}
-
-.contour {
-    fill: var(--heart-contour-color);
-    transition: fill 0.1s ease;
-}
-
-.like-icon:hover .core {
-    fill: var(--heart-contour-color);
-    transition: fill .3s ease;
-
-}
-
-.like-icon:hover .main-body {
-    fill: var(--heart-contour-color);
-    transition: fill .3s ease .05s;
-}
-
-.like-icon:active .main-body,
-.like-icon:active .core {
-    fill: var(--heart-color);
-    transition: fill .3s ease;
-}
-
-.like-icon.is-liked .core,
-.like-icon.is-liked .main-body {
-    fill: var(--heart-color);
-    transition: fill .3s ease;
-}
-
-.like-icon.is-liked .contour {
-    fill: var(--heart-color);
-    transition: fill .3s ease .06s;
-}
-
-.like-icon.is-liked .heart {
-    animation: zoom-in-out .3s .1s;
-    transform-origin: center center;
-    animation-direction: alternate;
-}
-
-.like-icon.is-liked .sparks {
-    animation: transition-in-out .3s .2s ease-in;
-    animation-direction: alternate;
 }
 
 .footer {

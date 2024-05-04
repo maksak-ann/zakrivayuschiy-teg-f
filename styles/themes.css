@@ -18,6 +18,9 @@
     --from-left-color: #d3d3d3;
     --from-top-color: #e7e7e7;
     --to-bottom-color: #1a1a1a;
+
+    --card-header-variation-font: 'wght' 700;
+    --card-body-variation-font: 'wght' 400;
 }
 
 :root.theme-dark {
@@ -33,6 +36,9 @@
     --from-left-color: #000;
     --from-top-color: #007f0c;
     --to-bottom-color: #004306;
+
+    --card-header-variation-font: 'wght' 785, 'slnt' 0;
+    --card-body-variation-font: 'wght' 465, 'slnt' 0;
 }
 
 /* Остальные стили */
@@ -50,6 +56,9 @@
         --from-left-color: #d3d3d3;
         --from-top-color: #e7e7e7;
         --to-bottom-color: #1a1a1a;
+
+        --card-header-variation-font: 'wght' 400;
+        --card-body-variation-font: 'wght' 400;
     }
 }
 
@@ -68,5 +77,8 @@
         --from-left-color: #000;
         --from-top-color: #007f0c;
         --to-bottom-color: #004306;
+
+        --card-header-variation-font: 'wght' 785, 'slnt' 0;
+        --card-body-variation-font: 'wght' 465, 'slnt' 0;
     }
 }
